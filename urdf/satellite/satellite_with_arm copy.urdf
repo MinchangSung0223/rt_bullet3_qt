@@ -1,0 +1,602 @@
+  
+<robot name="satellite_with_arm">
+  <material name="metal_grey">
+    <color rgba="0.501960784313725 0.501960784313725 0.501960784313725 1"/>
+  </material>
+    <material name="yellow">
+    <color rgba="0.7 0.7 0 1"/>
+  </material>
+  <link name="satellite_with_arm">
+    <inertial>
+      <mass value="100" />
+      <!-- center of mass (com) is defined w.r.t. link local coordinate system -->
+      <!-- give a little y-offset to make the top precess -->
+      <origin xyz="0 0 0" /> 
+      <inertia  ixx=" 45.3333" ixy="0.0"  ixz="0.0"  iyy=" 45.3333"  iyz="0.0"  izz="24" />
+    </inertial>
+       <visual>
+      <origin xyz="0 0 0" rpy="1.5708 3.141592 3.141592" />
+      <geometry>
+        <mesh filename="meshes/visual/satellite_with_arm_VISUAL.obj"  />
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.14599 -0.63199 0"/>
+   <geometry>
+       <box size="1.2 2 1.2" />
+     </geometry>
+    </collision>
+  </link>
+  <link name="ring1">
+ <inertial>
+     <mass value="0" />
+      <!-- center of mass (com) is defined w.r.t. link local coordinate system -->
+      <!-- give a little y-offset to make the top precess -->
+      <origin xyz="0 0 0" /> 
+      <inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+    </inertial>
+       <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 1.5708"/> 
+	<geometry>
+       <cylinder radius="0.02" length="0.7"/>
+
+     </geometry>
+    </visual>    
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 1.5708"/> 
+	   <geometry>
+       <cylinder radius="0.02" length="0.7"/>
+            </geometry>
+    </collision>    
+    
+
+</link>
+<link name="base_ring">
+ <inertial>
+     <mass value="0" />
+      <!-- center of mass (com) is defined w.r.t. link local coordinate system -->
+      <!-- give a little y-offset to make the top precess -->
+      <origin xyz="0 -0.512734 0" /> 
+      <inertia  ixx="0.0" ixy="0.0"  ixz="0.0"  iyy="0.0"  iyz="0.0"  izz="0.0" />
+    </inertial>
+<visual> <origin xyz='0.36 0 0 ' rpy = '0 0 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.35704 0 0.046036 ' rpy = '0 -0.12823 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.34823 0 0.091316 ' rpy = '0 -0.25646 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.33369 0 0.1351 ' rpy = '0 -0.38468 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.31367 0 0.17666 ' rpy = '0 -0.51291 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.28851 0 0.21532 ' rpy = '0 -0.64114 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.25861 0 0.25045 ' rpy = '0 -0.76937 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.22446 0 0.28146 ' rpy = '0 -0.8976 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.18662 0 0.30785 ' rpy = '0 -1.0258 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.14572 0 0.32919 ' rpy = '0 -1.1541 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.10243 0 0.34512 ' rpy = '0 -1.2823 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.057456 0 0.35539 ' rpy = '0 -1.4105 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.011539 0 0.35982 ' rpy = '0 -1.5387 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.034568 0 0.35834 ' rpy = '0 -1.667 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.080108 0 0.35097 ' rpy = '0 -1.7952 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.12433 0 0.33785 ' rpy = '0 -1.9234 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.16651 0 0.31918 ' rpy = '0 -2.0517 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.20596 0 0.29526 ' rpy = '0 -2.1799 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.24203 0 0.2665 ' rpy = '0 -2.3081 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.27412 0 0.23336 ' rpy = '0 -2.4363 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.30171 0 0.19639 ' rpy = '0 -2.5646 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.32435 0 0.1562 ' rpy = '0 -2.6928 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.34166 0 0.11344 ' rpy = '0 -2.821 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.35336 0 0.068817 ' rpy = '0 -2.9493 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.35926 0 0.023065 ' rpy = '0 -3.0775 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.35926 0 -0.023065 ' rpy = '0 -3.2057 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.35336 0 -0.068817 ' rpy = '0 -3.3339 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.34166 0 -0.11344 ' rpy = '0 -3.4622 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.32435 0 -0.1562 ' rpy = '0 -3.5904 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.30171 0 -0.19639 ' rpy = '0 -3.7186 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.27412 0 -0.23336 ' rpy = '0 -3.8468 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.24203 0 -0.2665 ' rpy = '0 -3.9751 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.20596 0 -0.29526 ' rpy = '0 -4.1033 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.16651 0 -0.31918 ' rpy = '0 -4.2315 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.12433 0 -0.33785 ' rpy = '0 -4.3598 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.080108 0 -0.35097 ' rpy = '0 -4.488 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='-0.034568 0 -0.35834 ' rpy = '0 -4.6162 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.011539 0 -0.35982 ' rpy = '0 -4.7444 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.057456 0 -0.35539 ' rpy = '0 -4.8727 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.10243 0 -0.34512 ' rpy = '0 -5.0009 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.14572 0 -0.32919 ' rpy = '0 -5.1291 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.18662 0 -0.30785 ' rpy = '0 -5.2574 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.22446 0 -0.28146 ' rpy = '0 -5.3856 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.25861 0 -0.25045 ' rpy = '0 -5.5138 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.28851 0 -0.21532 ' rpy = '0 -5.642 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.31367 0 -0.17666 ' rpy = '0 -5.7703 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.33369 0 -0.1351 ' rpy = '0 -5.8985 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.34823 0 -0.091316 ' rpy = '0 -6.0267 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.35704 0 -0.046036 ' rpy = '0 -6.155 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<visual> <origin xyz='0.36 0 -8.8175e-17 ' rpy = '0 -6.2832 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </visual> 
+<collision> <origin xyz='0.36 0 0 ' rpy = '0 0 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.35704 0 0.046036 ' rpy = '0 -0.12823 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.34823 0 0.091316 ' rpy = '0 -0.25646 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.33369 0 0.1351 ' rpy = '0 -0.38468 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.31367 0 0.17666 ' rpy = '0 -0.51291 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.28851 0 0.21532 ' rpy = '0 -0.64114 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.25861 0 0.25045 ' rpy = '0 -0.76937 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.22446 0 0.28146 ' rpy = '0 -0.8976 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.18662 0 0.30785 ' rpy = '0 -1.0258 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.14572 0 0.32919 ' rpy = '0 -1.1541 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.10243 0 0.34512 ' rpy = '0 -1.2823 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.057456 0 0.35539 ' rpy = '0 -1.4105 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.011539 0 0.35982 ' rpy = '0 -1.5387 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.034568 0 0.35834 ' rpy = '0 -1.667 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.080108 0 0.35097 ' rpy = '0 -1.7952 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.12433 0 0.33785 ' rpy = '0 -1.9234 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.16651 0 0.31918 ' rpy = '0 -2.0517 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.20596 0 0.29526 ' rpy = '0 -2.1799 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.24203 0 0.2665 ' rpy = '0 -2.3081 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.27412 0 0.23336 ' rpy = '0 -2.4363 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.30171 0 0.19639 ' rpy = '0 -2.5646 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.32435 0 0.1562 ' rpy = '0 -2.6928 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.34166 0 0.11344 ' rpy = '0 -2.821 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.35336 0 0.068817 ' rpy = '0 -2.9493 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.35926 0 0.023065 ' rpy = '0 -3.0775 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.35926 0 -0.023065 ' rpy = '0 -3.2057 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.35336 0 -0.068817 ' rpy = '0 -3.3339 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.34166 0 -0.11344 ' rpy = '0 -3.4622 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.32435 0 -0.1562 ' rpy = '0 -3.5904 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.30171 0 -0.19639 ' rpy = '0 -3.7186 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.27412 0 -0.23336 ' rpy = '0 -3.8468 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.24203 0 -0.2665 ' rpy = '0 -3.9751 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.20596 0 -0.29526 ' rpy = '0 -4.1033 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.16651 0 -0.31918 ' rpy = '0 -4.2315 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.12433 0 -0.33785 ' rpy = '0 -4.3598 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.080108 0 -0.35097 ' rpy = '0 -4.488 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='-0.034568 0 -0.35834 ' rpy = '0 -4.6162 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.011539 0 -0.35982 ' rpy = '0 -4.7444 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.057456 0 -0.35539 ' rpy = '0 -4.8727 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.10243 0 -0.34512 ' rpy = '0 -5.0009 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.14572 0 -0.32919 ' rpy = '0 -5.1291 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.18662 0 -0.30785 ' rpy = '0 -5.2574 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.22446 0 -0.28146 ' rpy = '0 -5.3856 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.25861 0 -0.25045 ' rpy = '0 -5.5138 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.28851 0 -0.21532 ' rpy = '0 -5.642 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.31367 0 -0.17666 ' rpy = '0 -5.7703 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.33369 0 -0.1351 ' rpy = '0 -5.8985 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.34823 0 -0.091316 ' rpy = '0 -6.0267 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.35704 0 -0.046036 ' rpy = '0 -6.155 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision> 
+<collision> <origin xyz='0.36 0 -8.8175e-17 ' rpy = '0 -6.2832 0'/> 	   <geometry><box size='0.05 0.25 0.05' /></geometry> </collision>  
+</link>
+
+  <link name="base_urdf">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="4.48218" />
+      <inertia
+        ixx=" 0.04755097476"
+        ixy=" 0.00000000000"
+        ixz=" 0.00000000000"
+        iyy=" 0.04755157166"
+        iyz="-0.00000000081"
+        izz=" 0.00981063776" />
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/base.stl" />
+      </geometry>
+      <material name="metal_grey"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/base.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+<!-- link1-->
+  <link name="Link1">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="6.68036" />
+      <inertia
+        ixx=" 0.10111928569"
+        ixy=" 0.00000008334"
+        ixz=" 0.03015133480"
+        iyy=" 0.18848740784"
+        iyz="-0.00000017706"
+        izz=" 0.10400188938" />
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/link1.stl" />
+      </geometry>
+      <material name="metal_grey"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/link1.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+<!-- link2-->
+  <link name="Link2">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="11.79632" />
+      <inertia
+        ixx=" 4.91550234685"
+        ixy=" 0.00000014822"
+        ixz="-0.50555195363"
+        iyy=" 4.98412972242"
+        iyz=" 0.00000019211"
+        izz=" 0.09931438243" />
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/link2.stl" />
+      </geometry>
+      <material name="metal_grey"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/link2.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+<!-- link3-->
+  <link name="Link3">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="6.64337" />
+      <inertia
+        ixx=" 0.63648861546"
+        ixy="-0.00000008021"
+        ixz=" 0.05018998139"
+        iyy=" 0.64404883542"
+        iyz=" 0.00000051611"
+        izz=" 0.02392204376" />
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/link3.stl" />
+      </geometry>
+      <material name="metal_grey"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/link3.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+<!-- link4-->
+  <link name="Link4">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="10.52407" />
+      <inertia
+        ixx=" 1.58306193195"
+        ixy="-0.00000015788"
+        ixz="-0.26496599873"
+        iyy=" 1.64103561723"
+        iyz="-0.00000014054"
+        izz=" 0.08369098333" />
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/link4.stl" />
+      </geometry>
+      <material name="metal_grey"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/link4.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+<!-- link5-->
+  <link name="Link5">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="6.64337" />
+      <inertia
+        ixx=" 0.63648861546"
+        ixy=" 0.00000008021"
+        ixz="-0.05018998139"
+        iyy=" 0.64404883542"
+        iyz=" 0.00000051611"
+        izz=" 0.02392204376" />
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/link5.stl" />
+      </geometry>
+      <material name="metal_grey"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/link5.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+<!-- link6-->
+  <link name="Link6">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="8.75036" />
+      <inertia
+        ixx=" 0.30380671545"
+        ixy="-0.00000008334"
+        ixz=" 0.02875889215"
+        iyy=" 0.31843566669"
+        iyz="-0.00000017706"
+        izz=" 0.03617183352" />
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/link6.stl" />
+      </geometry>
+      <material name="metal_grey"/>
+    </visual>
+
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/link6.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+<!-- link7-->
+  <link name="Link7">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="4.49347" />
+      <inertia
+        ixx="0.00157801213"
+        ixy="0.00000000000"
+        ixz="0.00000000000"
+        iyy="0.01157801213"
+        iyz="0.00000000000"
+        izz="0.00894926406" />
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="meshes/link7.stl" />
+      </geometry>
+      <material name="metal_grey"/>
+
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="meshes/link7.stl"/>
+      </geometry>
+    </collision>
+  </link>
+
+<!-- tcp-->
+  <link name="tcp">
+    <inertial>
+      <mass value="0.0"/>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+
+    <collision>
+      <geometry>
+        <box size="0.00 0.00 0.00"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00 0 0"/>
+    </collision>
+  </link>
+
+  <link name="finger_right">
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.1"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00 0 0"/>
+            <material name="yellow"/>
+
+    </visual>
+    
+    <collision>
+      <geometry>
+        <box size="0.04 0.04 0.1"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00 0 0"/>
+    </collision>
+      <contact>
+      <lateral_friction value="1.0"/>
+      <inertia_scaling value="3.0"/>
+    </contact>
+  </link>
+  <link name="finger_left">
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.1"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00 0 0"/>
+        <material name="yellow"/>
+
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.04 0.04 0.1"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.00 0 0"/>
+    </collision>
+      <contact>
+      <lateral_friction value="1.0"/>
+      <inertia_scaling value="3.0"/>
+    </contact>
+  </link>
+
+  
+  <joint name="ring1_fixed" type="fixed">
+    <origin xyz="0.82924 0 0" rpy="0 0 0" />
+    <parent link="satellite_with_arm" />
+    <child link="ring1" />
+  </joint>
+      <joint name="base_ring_fixed" type="fixed">
+    <origin xyz="0 0.5  0" rpy="0 0 0" />
+    <parent link="satellite_with_arm" />
+    <child link="base_ring" />
+  </joint>
+    <joint name="satellite_with_arm_fixed" type="fixed">
+    <origin xyz="0.47855 -1.7638 0" rpy="0 1.5708 0" />
+    <parent link="satellite_with_arm" />
+    <child link="base_urdf" />
+  </joint>
+  
+  
+<!-- joint1-->
+  <joint name="Joint1" type="revolute">
+    <origin xyz="0 0 0.128" rpy="0 0 0" />
+    <parent link="base_urdf" />
+    <child link="Link1" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="100"
+      velocity="20" />
+  </joint>
+
+<!-- joint2-->
+  <joint name="Joint2" type="revolute">
+    <origin xyz="-0.0915 0 0.128" rpy="0 0 0" />
+    <parent link="Link1" />
+    <child link="Link2" />
+    <axis xyz="-1 0 0" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="100"
+      velocity="20" />
+  </joint>
+
+<!-- joint3-->
+  <joint name="Joint3" type="revolute">
+    <origin xyz="-0.0915 0 1.0045" rpy="0 0 0" />
+    <parent link="Link2" />
+    <child link="Link3" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="100"
+      velocity="20" />
+  </joint>
+
+<!-- joint4-->
+  <joint name="Joint4" type="revolute">
+    <origin xyz="0.0915 0 0.4455" rpy="0 0 0" />
+    <parent link="Link3" />
+    <child link="Link4" />
+    <axis xyz="1 0 0" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="100"
+      velocity="20" />
+  </joint>
+
+<!-- joint5-->
+  <joint name="Joint5" type="revolute">
+    <origin xyz="0.0915 0 -0.6045" rpy="0 0 0" />
+    <parent link="Link4" />
+    <child link="Link5" />
+    <axis xyz="0 0 -1" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="100"
+      velocity="20" />
+  </joint>
+
+<!-- joint6-->
+  <joint name="Joint6" type="revolute">
+    <origin xyz="0.0915 0 -0.4455" rpy="0 0 0" />
+    <parent link="Link5" />
+    <child link="Link6" />
+    <axis xyz="1 0 0" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="100"
+      velocity="20" />
+  </joint>
+
+<!-- joint7-->
+  <joint name="Joint7" type="revolute">
+    <origin xyz="0.0915 0 0.128" rpy="0 0 0" />
+    <parent link="Link6" />
+    <child link="Link7" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="-6.28"
+      upper="6.28"
+      effort="100"
+      velocity="20" />
+  </joint>
+
+  <joint name="tcp" type="fixed">
+    <origin xyz="0 0 0.087" rpy="0 0 0"/>
+    <parent link="Link7"/>
+    <child link="tcp"/>
+  </joint>
+
+ 
+  <joint name="finger_right_prismatic" type="prismatic">
+    <origin xyz="0 0.02 0.06" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <parent link="tcp"/>
+    <child link="finger_right"/>
+    <limit effort="20" lower="0.01" upper="0.1" velocity="0.3"/>
+  </joint>
+  <joint name="finger_left_prismatic" type="prismatic">
+    <origin xyz="0 -0.02 0.06" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <parent link="tcp"/>
+    <child link="finger_left"/>
+    <limit effort="20" lower="0.01" upper="0.1" velocity="0.3"/>
+  </joint>  
+</robot>
