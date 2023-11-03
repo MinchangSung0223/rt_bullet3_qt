@@ -29,3 +29,22 @@ cmake .. -DBULLET_PHYSICS_SOURCE_DIR=${BULLET_PHYSICS_SOURCE_DIR} -DBULLET_PHYSI
 make j$(nproc)
 ./hello
 ```
+
+
+# 문제점
+make install할 경우
+```
+/usr/local/lib
+``
+위에 install됨, 그런데 ros2나 ros가 설치되어 있는경우
+
+```
+/usr/lib/x86_64-linux-gnu
+```
+위 폴더에 libBullet*.so.2.88 들이 설치되어 있음
+
+따라서 충돌을 막기 위해 다음과 같이 설정
+```
+sudo cp  /usr/local/lib/libBullet* /usr/lib/x86_64-linux-gnu
+```
+
